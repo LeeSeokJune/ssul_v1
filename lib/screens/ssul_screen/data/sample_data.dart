@@ -1,6 +1,6 @@
 import '../../../models/ssul_model.dart';
 
-final sample_data = [
+final sampleData = [
   SsulModel(contents: '재미있는내용', leftButtonText: '노잼', rightButtonText: '꿀잼')
       .toMap(),
   SsulModel(contents: '재미없는내용', leftButtonText: 'yes', rightButtonText: 'no')
