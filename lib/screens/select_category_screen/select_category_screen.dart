@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ssul_v1/components/data.dart';
 import 'package:ssul_v1/components/screen_routes.dart';
+import 'package:ssul_v1/components/style.dart';
 import 'package:ssul_v1/controllers/category_controller.dart';
 
 class SelectCategoryScreen extends StatelessWidget {
@@ -13,30 +14,31 @@ class SelectCategoryScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('관심있는 카테고리 선택'),
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 30),
-          Text(
-            '3개 이상 선택해주세요',
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 30),
-          Expanded(
-            child: GridView.builder(
-              itemCount: categoryList.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                childAspectRatio: 10 / 4,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
+      body: Center(
+        child: Container(
+          width: Get.size.width - 40,
+          child: Column(
+            children: [
+              SizedBox(height: 30),
+              Text(
+                '3개 이상 선택해주세요',
+                textAlign: TextAlign.center,
               ),
-              itemBuilder: ((context, index) => _categoryButton(index: index)),
-            ),
+              SizedBox(height: 30),
+              Wrap(
+                spacing: 10,
+                runSpacing: 10,
+                children: [
+                  for (var index = 0; index < categoryList.length; index++)
+                    _categoryButton(index: index)
+                ],
+              ),
+              SizedBox(height: 30),
+              _nextButton(),
+              SizedBox(height: 30),
+            ],
           ),
-          SizedBox(height: 30),
-          _nextButton(),
-          SizedBox(height: 30),
-        ],
+        ),
       ),
     );
   }
@@ -81,17 +83,41 @@ class SelectCategoryScreen extends StatelessWidget {
     return InkWell(
       child: Obx(
         () => Container(
+          width: 140,
+          height: 60,
           decoration: BoxDecoration(
-            border: Border.all(
-              color: categoryController.selectedCategory[index].value
-                  ? Colors.blue
-                  : Colors.grey,
-              width: 2,
-            ),
+            color: Colors.white,
+            // border: Border.all(
+            //   color: categoryController.selectedCategory[index].value
+            //       ? Colors.blue
+            //       : Colors.grey,
+            //   width: 2,
+            // ),
             borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                offset: Offset(1, 3),
+                blurRadius: 5.0,
+                spreadRadius: -1.0,
+              ),
+              BoxShadow(
+                color: Colors.white,
+              ),
+            ],
           ),
           child: Center(
-            child: Text('${categoryList[index]}'),
+            child: Text(
+              '${categoryList[index]}',
+              style: TextStyle(
+                fontWeight: categoryController.selectedCategory[index].value
+                    ? FontWeight.bold
+                    : FontWeight.w400,
+                color: categoryController.selectedCategory[index].value
+                    ? Colors.blue
+                    : Colors.black,
+              ),
+            ),
           ),
         ),
       ),

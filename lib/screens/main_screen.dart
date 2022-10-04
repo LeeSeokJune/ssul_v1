@@ -1,3 +1,4 @@
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ssul_v1/controllers/navigation_controller.dart';
@@ -17,29 +18,19 @@ class MainScreen extends StatelessWidget {
           title: Text('우와아앙'),
           automaticallyImplyLeading: false,
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: navigationController.currentIndex.value,
+        bottomNavigationBar: AnimatedBottomNavigationBar(
+          activeIndex: navigationController.currentIndex.value,
+          gapLocation: GapLocation.center,
+          notchSmoothness: NotchSmoothness.verySmoothEdge,
+          backgroundColor: Colors.white,
           onTap: (index) {
             navigationController.setCurrentIndex(index);
           },
-          items: [
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home,
-                ),
-                label: 'home'),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.library_books,
-              ),
-              label: 'fairy_tale',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_circle,
-              ),
-              label: '내 정보',
-            ),
+          icons: [
+            Icons.home,
+            Icons.book,
+            Icons.account_circle,
+            Icons.settings,
           ],
         ),
         body: _bodyItem[navigationController.currentIndex.value],
