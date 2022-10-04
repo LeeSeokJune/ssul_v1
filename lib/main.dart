@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: ThemeData(fontFamily: 'Suit', backgroundColor: Colors.white),
-      home: MainScreen(),
+      home: SelectCategoryScreen(),
       getPages: pages,
     );
   }
