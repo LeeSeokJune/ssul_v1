@@ -114,7 +114,7 @@ class SelectCategoryScreen extends StatelessWidget {
                     ? FontWeight.bold
                     : FontWeight.w400,
                 color: categoryController.selectedCategory[index].value
-                    ? Colors.blue
+                    ? Colors.redAccent
                     : Colors.black,
               ),
             ),
