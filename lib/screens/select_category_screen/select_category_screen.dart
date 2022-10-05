@@ -16,15 +16,14 @@ class SelectCategoryScreen extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          width: Get.size.width - 40,
+          width: Get.size.width - 20,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SizedBox(height: 30),
               Text(
                 '3개 이상 선택해주세요',
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 30),
               Wrap(
                 spacing: 10,
                 runSpacing: 10,
@@ -35,7 +34,6 @@ class SelectCategoryScreen extends StatelessWidget {
               ),
               SizedBox(height: 30),
               _nextButton(),
-              SizedBox(height: 30),
             ],
           ),
         ),
@@ -46,7 +44,7 @@ class SelectCategoryScreen extends StatelessWidget {
   Widget _nextButton() {
     return InkWell(
       child: Container(
-        width: 200,
+        width: 180,
         height: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -83,29 +81,9 @@ class SelectCategoryScreen extends StatelessWidget {
     return InkWell(
       child: Obx(
         () => Container(
-          width: 140,
-          height: 60,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            // border: Border.all(
-            //   color: categoryController.selectedCategory[index].value
-            //       ? Colors.blue
-            //       : Colors.grey,
-            //   width: 2,
-            // ),
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                offset: Offset(1, 3),
-                blurRadius: 5.0,
-                spreadRadius: -1.0,
-              ),
-              BoxShadow(
-                color: Colors.white,
-              ),
-            ],
-          ),
+          width: 110,
+          height: 50,
+          decoration: buttonStyle,
           child: Center(
             child: Text(
               '${categoryList[index]}',

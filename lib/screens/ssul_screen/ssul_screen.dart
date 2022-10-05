@@ -21,12 +21,7 @@ class SsulScreen extends StatelessWidget {
             Container(
               width: 300,
               height: 300,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.blue,
-                ),
-                borderRadius: BorderRadius.circular(10),
-              ),
+              decoration: buttonStyle,
               child: Center(
                 child: Text(
                     '${sampleData[ssulController.ssulIndex.value]['contents']}'),
@@ -39,7 +34,7 @@ class SsulScreen extends StatelessWidget {
                 _selectButton(name: 'leftButtonText'),
                 InkWell(
                   child: Container(
-                    decoration: blueRadiusLine,
+                    decoration: buttonStyle,
                     width: 100,
                     height: 30,
                     child: Center(child: Text('신고하기')),
@@ -75,7 +70,7 @@ class SsulScreen extends StatelessWidget {
               child: Container(
                 width: 100,
                 height: 30,
-                decoration: blueRadiusLine,
+                decoration: buttonStyle,
                 child: Center(child: Text('처음부터')),
               ),
               onTap: () {
@@ -87,7 +82,7 @@ class SsulScreen extends StatelessWidget {
               child: Container(
                 width: 100,
                 height: 30,
-                decoration: blueRadiusLine,
+                decoration: buttonStyle,
                 child: Center(child: Text('이야기 작성')),
               ),
               onTap: () {
@@ -103,7 +98,7 @@ class SsulScreen extends StatelessWidget {
   Widget _selectButton({name}) {
     return InkWell(
       child: Container(
-        decoration: blueRadiusLine,
+        decoration: buttonStyle,
         width: 100,
         height: 30,
         child: Center(

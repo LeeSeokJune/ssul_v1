@@ -30,6 +30,7 @@ class _TestScreenState extends State<TestScreen> {
         //navigation bar
         icons: iconList, //list of icons
         activeIndex: _bottomNavIndex,
+        activeColor: Colors.white,
         gapLocation: GapLocation.center,
         notchSmoothness: NotchSmoothness.verySmoothEdge,
         onTap: (index) => setState(() {

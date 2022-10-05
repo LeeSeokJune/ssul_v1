@@ -1,4 +1,3 @@
-import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ssul_v1/controllers/navigation_controller.dart';
@@ -18,23 +17,26 @@ class MainScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text('우와아앙'),
           automaticallyImplyLeading: false,
+          backgroundColor: Colors.grey,
         ),
-        floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.home_max_outlined), onPressed: () {}),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        bottomNavigationBar: AnimatedBottomNavigationBar(
-          activeIndex: navigationController.currentIndex.value,
-          gapLocation: GapLocation.center,
-          notchSmoothness: NotchSmoothness.verySmoothEdge,
-          backgroundColor: Colors.white,
+        extendBody: true,
+        bottomNavigationBar: BottomNavigationBar(
+          elevation: 3,
+          backgroundColor: Colors.black,
+          currentIndex: navigationController.currentIndex.value,
+          selectedItemColor: Colors.amber[800],
+          unselectedItemColor: Colors.grey,
+          // showUnselectedLabels: true,
           onTap: (index) {
             navigationController.setCurrentIndex(index);
           },
-          icons: [
-            Icons.home,
-            Icons.book,
-            Icons.account_circle,
-            Icons.settings,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'HOME'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.library_books_rounded), label: '이야기'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle_rounded), label: '계정'),
+            BottomNavigationBarItem(icon: Icon(Icons.settings), label: '설정'),
           ],
         ),
         body: _bodyItem[navigationController.currentIndex.value],
