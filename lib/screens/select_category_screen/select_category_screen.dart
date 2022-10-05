@@ -13,6 +13,7 @@ class SelectCategoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('관심있는 카테고리 선택'),
+        backgroundColor: Colors.grey,
       ),
       body: Center(
         child: Container(
