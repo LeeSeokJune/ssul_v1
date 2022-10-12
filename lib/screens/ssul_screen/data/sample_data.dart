@@ -1,45 +1,29 @@
 import '../../../models/ssul_model.dart';
 
 final sampleData = [
-  SsulModel(contents: '재미있는내용', leftButtonText: '노잼', rightButtonText: '꿀잼')
+  SsulModel(
+          contents: '점심 메뉴 추천받음', leftButtonText: '짜장면', rightButtonText: '짬뽕')
       .toMap(),
-  SsulModel(contents: '재미없는내용', leftButtonText: 'yes', rightButtonText: 'no')
-      .toMap(),
-  SsulModel(contents: 'ㅋㅋㅋㅋㅋㅋㅋㅋㅋ', leftButtonText: '잼', rightButtonText: '꿀잼')
+  SsulModel(contents: '희훈이는 바보', leftButtonText: 'yes', rightButtonText: 'yes')
       .toMap(),
   SsulModel(
-          contents: 'ㅁㅂㅈㅂㄷ검ㅇㄴ라ㅓㅗㅇㅁ나ㅓㅗㅇㄹ',
-          leftButtonText: 'yes',
-          rightButtonText: 'yes')
+          contents: '석준이는 똑똑하다', leftButtonText: 'yes', rightButtonText: 'yes')
       .toMap(),
   SsulModel(
-          contents: 'ㅁㅂㅈㅂㄷ검ㅇㄴ라ㅓㅗㅇㅁ나ㅓㅗㅇㄹ',
-          leftButtonText: '노잼',
-          rightButtonText: '꿀잼')
+          contents: '오렌지 먹은지 얼마나 오랜지',
+          leftButtonText: '꿀잼',
+          rightButtonText: '노잼')
       .toMap(),
-  SsulModel(
-          contents: 'ㅁqwerweqrwqrㅂㅈㅂㄷ검ㅇㄴ라ㅓㅗㅇㅁ나ㅓㅗㅇㄹ',
-          leftButtonText: '노잼',
-          rightButtonText: '꿀잼')
+  SsulModel(contents: '아 연애하고싶다', leftButtonText: 'ㅇㅈ', rightButtonText: 'ㅇㅈㅇㅈ')
       .toMap(),
-  SsulModel(
-          contents: 'asdf검ㅇㄴ라ㅓㅗㅇㅁ나ㅓㅗㅇㄹ',
-          leftButtonText: '노잼',
-          rightButtonText: '꿀잼')
+  SsulModel(contents: '2+2x2', leftButtonText: '6', rightButtonText: '8')
       .toMap(),
-  SsulModel(
-          contents: 'ㅁㅂㅈㅂㄷ검ㅇㄴsadgadsgas나ㅓㅗㅇㄹ',
-          leftButtonText: '노잼',
-          rightButtonText: '꿀잼')
+  SsulModel(contents: '탕수육', leftButtonText: '부먹', rightButtonText: '찍먹')
       .toMap(),
-  SsulModel(
-          contents: 'ㅁㅂㅈㅂasdfasdㅁ나ㅓㅗㅇㄹ',
-          leftButtonText: '노잼',
-          rightButtonText: '꿀잼')
+  SsulModel(contents: '파인애플피자', leftButtonText: '좋아', rightButtonText: '너무 좋아')
       .toMap(),
-  SsulModel(
-          contents: 'ㅁㅂㅈㅂㄷ검ㅇasq12312adsfㅇㅁ나ㅓㅗㅇㄹ',
-          leftButtonText: '노잼',
-          rightButtonText: '꿀잼')
+  SsulModel(contents: '민초', leftButtonText: '에바', rightButtonText: '치약')
+      .toMap(),
+  SsulModel(contents: '정치 성향', leftButtonText: '진보', rightButtonText: '보수')
       .toMap(),
 ];

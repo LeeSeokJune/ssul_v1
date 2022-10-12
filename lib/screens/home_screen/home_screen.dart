@@ -7,8 +7,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('home'),
+    return Center(
+      child: Text('인기글 '),
     );
   }
 }
