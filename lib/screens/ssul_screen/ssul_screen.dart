@@ -28,6 +28,16 @@ class SsulScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30),
+            InkWell(
+              child: Container(
+                width: 100,
+                height: 30,
+                decoration: buttonStyle,
+                child: Center(child: Text('저장하기')),
+              ),
+              onTap: () {},
+            ),
+            SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
