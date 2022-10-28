@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ssul_v1/components/restApi.dart';
 import 'package:ssul_v1/components/style.dart';
 import 'package:ssul_v1/controllers/ssul_controller.dart';
 
 class SsulRegisterScreen extends StatelessWidget {
   SsulRegisterScreen({Key? key}) : super(key: key);
   var ssulController = Get.put(SsulController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +43,36 @@ class SsulRegisterScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 30),
+                  Column(
+                    children: [
+                      Text('카테고리'),
+                      Container(
+                        decoration: buttonStyle,
+                        width: 200,
+                        height: 60,
+                        child: TextField(
+                          cursorColor: Colors.grey,
+                          maxLines: 10,
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                              ),
+                            ),
+                          ),
+                          onChanged: (value) {
+                            ssulController.changeRegisterText(value);
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 30),
                   InkWell(
                     child: Container(
                       decoration: buttonStyle,
@@ -57,14 +89,18 @@ class SsulRegisterScreen extends StatelessWidget {
                             TextButton(
                               child: Text('예'),
                               onPressed: () {
-                                Get.back();
-                                Get.back();
+                                print(ssulController.getRegisterData());
+                                postData(
+                                    data: ssulController.getRegisterData());
+                                // Get.back();
+                                // Get.back();
                               },
                             ),
                             TextButton(
                               child: Text('아니오'),
                               onPressed: () {
-                                Get.back();
+                                // Get.back();
+                                print('asdf');
                               },
                             ),
                           ],
@@ -104,6 +140,13 @@ class SsulRegisterScreen extends StatelessWidget {
                 ),
               ),
             ),
+            onChanged: (value) {
+              if (text == '선택지 1') {
+                ssulController.changeLeftText(value);
+              } else {
+                ssulController.changeRightText(value);
+              }
+            },
           ),
         ),
       ],
